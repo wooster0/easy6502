@@ -1,10 +1,13 @@
 ; this was my first approach to drawing pixels with random colors at random positions on the screen until the whole screen is filled
 ; while never filling the same position more than once.
 ; the way this works is that filled positions are recorded in a buffer and aren't drawn to again by iterating through the entire
-; buffer every time and checking whether the new position is in the buffer.
-; this has a time complexity of O(n) and is very slow.
+; buffer every time and checking whether the new position is in the buffer
+; which makes this approach very slow in the common case because no buffer is required in the first place, see fast_random_color_fill.asm.
+; this has a time complexity of O(∞).
 
 ; NB: BEQ branches when zero flag is 1 and BNE branches when zero flag is 0.
+
+; NOTE: this approach has some bugs and the out of bounds checks are not accurate
 
 ; this will give us a random byte
 define random $fe
@@ -110,9 +113,6 @@ pushToBuffer:
     sta bufferH
 
     rts
-
-; 1. submit your buffer stuff to the IRC as a minimized example
-; 2. make a second version that doesn't have its own buffer but just checks for free space from $0200 to $05ff
 
 ; checks whether the buffer contains the current position.
 checkWhetherBufferContainsPosition:
