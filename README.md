@@ -1,8 +1,8 @@
 # Running
 
-Go to https://skilldrick.github.io/easy6502/#first-program and copy-paste the program you want to run into the simulator, press "Assemble" and then "Run".
+Go to http://6502.cdot.systems/, copy & paste the program you want to run, press "Assemble" and then "Run".
 
-# Screenshots
+# Screenshots of some programs
 
 ## `rainbow.asm`
 
