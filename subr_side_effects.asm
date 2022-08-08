@@ -7,7 +7,7 @@ main:
 
 ; the screen width
 width:
-	; this is memory that will be in RAM
+	; this is data that will be in RAM
 	; when the program starts.
 	; this is like part of the data section.
 	dcb 32
